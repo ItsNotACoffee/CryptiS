@@ -13,3 +13,4 @@ C:\Users\Kristian\source\repos\CryptiS\CryptiS\obj\Debug\CryptiS.csproj.CoreComp
 C:\Users\Kristian\source\repos\CryptiS\CryptiS\obj\Debug\CryptiS.exe
 C:\Users\Kristian\source\repos\CryptiS\CryptiS\obj\Debug\CryptiS.pdb
 C:\Users\Kristian\source\repos\CryptiS\CryptiS\obj\Debug\CryptiS.formEncryptAsymmetric.resources
+C:\Users\Kristian\source\repos\CryptiS\CryptiS\obj\Debug\CryptiS.formDecryptAsymmetric.resources

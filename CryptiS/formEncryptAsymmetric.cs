@@ -47,7 +47,7 @@ namespace CryptiS
             {
                 string fileContent = File.ReadAllText(originalFile);
                 string pKey = File.ReadAllText(publicKey);
-                byte[] encryptedContent = Cryptography.Asymmetric.Encrypt(originalFile, pKey);
+                byte[] encryptedContent = Cryptography.Asymmetric.Encrypt(fileContent, pKey);
                 WorkingDir.save(Convert.ToBase64String(encryptedContent), "kriptirani_tekst_asimetricni.txt");
                 richTextEncryptedFile.Text = Convert.ToBase64String(encryptedContent);
                 textEncryptedPath.Text = WorkingDir.directory + "\\" + "kriptirani_tekst_asimetricni.txt";

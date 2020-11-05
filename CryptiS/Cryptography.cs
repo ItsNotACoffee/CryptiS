@@ -37,7 +37,7 @@ public class Cryptography
             string privateKeyReadable = Encoding.UTF8.GetString(Convert.FromBase64String(privateKey));
 
             RSACryptoServiceProvider rsa = new RSACryptoServiceProvider(keySize);
-            rsa.FromXmlString(privateKey);
+            rsa.FromXmlString(privateKeyReadable);
             byte[] decryptedData = rsa.Decrypt(cipherText, false);
 
             return Encoding.UTF8.GetString(decryptedData);

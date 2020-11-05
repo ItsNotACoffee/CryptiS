@@ -118,6 +118,7 @@ namespace CryptiS
         private void btnDecryptAsymmetric_Click(object sender, EventArgs e)
         {
             hideSubmenus();
+            openForm(new formDecryptAsymmetric());
         }
 
         private void btnCalculateHash_Click(object sender, EventArgs e)
