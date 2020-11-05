@@ -1,3 +1,5 @@
+![CryptiS Logo](/res/cryptis.png)
+
 # CryptiS
 
 - Small C# app made to demonstrate symmetric and asymmetric cryptographic algorithms, calculating file hash and digital signatures.
