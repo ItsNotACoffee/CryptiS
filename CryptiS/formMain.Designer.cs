@@ -32,6 +32,9 @@
             this.titleBar = new System.Windows.Forms.Panel();
             this.exit = new System.Windows.Forms.PictureBox();
             this.panelHolderPanel = new System.Windows.Forms.Panel();
+            this.labelChooseDir = new System.Windows.Forms.Label();
+            this.btnChooseDir = new System.Windows.Forms.Button();
+            this.fbdMainDir = new System.Windows.Forms.FolderBrowserDialog();
             this.sidebar = new CryptiS.GradientPanel();
             this.btnDigitalSignature = new System.Windows.Forms.Button();
             this.btnCalculateHash = new System.Windows.Forms.Button();
@@ -45,10 +48,8 @@
             this.btnEncrypt = new System.Windows.Forms.Button();
             this.btnGenerateKeys = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.sidebarLogo = new System.Windows.Forms.PictureBox();
-            this.btnChooseDir = new System.Windows.Forms.Button();
-            this.labelChooseDir = new System.Windows.Forms.Label();
-            this.fbdMainDir = new System.Windows.Forms.FolderBrowserDialog();
+            this.pictureLogo = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.titleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.exit)).BeginInit();
             this.panelHolderPanel.SuspendLayout();
@@ -56,7 +57,7 @@
             this.panelSubDecrypt.SuspendLayout();
             this.panelSubEncrypt.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sidebarLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // titleBar
@@ -92,11 +93,41 @@
             this.panelHolderPanel.Size = new System.Drawing.Size(648, 675);
             this.panelHolderPanel.TabIndex = 2;
             // 
+            // labelChooseDir
+            // 
+            this.labelChooseDir.AutoSize = true;
+            this.labelChooseDir.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelChooseDir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(53)))), ((int)(((byte)(147)))));
+            this.labelChooseDir.Location = new System.Drawing.Point(131, 238);
+            this.labelChooseDir.Name = "labelChooseDir";
+            this.labelChooseDir.Size = new System.Drawing.Size(395, 18);
+            this.labelChooseDir.TabIndex = 15;
+            this.labelChooseDir.Text = "Odaberite direktorij gdje će se pohranjivati datoteke";
+            // 
+            // btnChooseDir
+            // 
+            this.btnChooseDir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(53)))), ((int)(((byte)(147)))));
+            this.btnChooseDir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnChooseDir.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btnChooseDir.FlatAppearance.BorderSize = 0;
+            this.btnChooseDir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(95)))), ((int)(((byte)(196)))));
+            this.btnChooseDir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChooseDir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChooseDir.ForeColor = System.Drawing.Color.White;
+            this.btnChooseDir.Location = new System.Drawing.Point(240, 308);
+            this.btnChooseDir.Name = "btnChooseDir";
+            this.btnChooseDir.Size = new System.Drawing.Size(159, 43);
+            this.btnChooseDir.TabIndex = 1;
+            this.btnChooseDir.Text = "Odaberi direktorij";
+            this.btnChooseDir.UseVisualStyleBackColor = false;
+            this.btnChooseDir.Click += new System.EventHandler(this.btnChooseDir_Click);
+            // 
             // sidebar
             // 
             this.sidebar.AutoScroll = true;
             this.sidebar.ColorBottom = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(53)))), ((int)(((byte)(147)))));
             this.sidebar.ColorTop = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(53)))), ((int)(((byte)(147)))));
+            this.sidebar.Controls.Add(this.label1);
             this.sidebar.Controls.Add(this.btnDigitalSignature);
             this.sidebar.Controls.Add(this.btnCalculateHash);
             this.sidebar.Controls.Add(this.panelSubDecrypt);
@@ -316,51 +347,34 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(53)))), ((int)(((byte)(147)))));
-            this.panel1.Controls.Add(this.sidebarLogo);
+            this.panel1.Controls.Add(this.pictureLogo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(280, 225);
             this.panel1.TabIndex = 0;
             // 
-            // sidebarLogo
+            // pictureLogo
             // 
-            this.sidebarLogo.Image = ((System.Drawing.Image)(resources.GetObject("sidebarLogo.Image")));
-            this.sidebarLogo.Location = new System.Drawing.Point(38, 29);
-            this.sidebarLogo.Name = "sidebarLogo";
-            this.sidebarLogo.Size = new System.Drawing.Size(199, 116);
-            this.sidebarLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.sidebarLogo.TabIndex = 0;
-            this.sidebarLogo.TabStop = false;
+            this.pictureLogo.Image = ((System.Drawing.Image)(resources.GetObject("pictureLogo.Image")));
+            this.pictureLogo.Location = new System.Drawing.Point(3, 48);
+            this.pictureLogo.Name = "pictureLogo";
+            this.pictureLogo.Size = new System.Drawing.Size(276, 139);
+            this.pictureLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureLogo.TabIndex = 1;
+            this.pictureLogo.TabStop = false;
             // 
-            // btnChooseDir
+            // label1
             // 
-            this.btnChooseDir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(53)))), ((int)(((byte)(147)))));
-            this.btnChooseDir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnChooseDir.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.btnChooseDir.FlatAppearance.BorderSize = 0;
-            this.btnChooseDir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(95)))), ((int)(((byte)(196)))));
-            this.btnChooseDir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChooseDir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChooseDir.ForeColor = System.Drawing.Color.White;
-            this.btnChooseDir.Location = new System.Drawing.Point(240, 308);
-            this.btnChooseDir.Name = "btnChooseDir";
-            this.btnChooseDir.Size = new System.Drawing.Size(159, 43);
-            this.btnChooseDir.TabIndex = 1;
-            this.btnChooseDir.Text = "Odaberi direktorij";
-            this.btnChooseDir.UseVisualStyleBackColor = false;
-            this.btnChooseDir.Click += new System.EventHandler(this.btnChooseDir_Click);
-            // 
-            // labelChooseDir
-            // 
-            this.labelChooseDir.AutoSize = true;
-            this.labelChooseDir.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelChooseDir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(53)))), ((int)(((byte)(147)))));
-            this.labelChooseDir.Location = new System.Drawing.Point(131, 238);
-            this.labelChooseDir.Name = "labelChooseDir";
-            this.labelChooseDir.Size = new System.Drawing.Size(395, 18);
-            this.labelChooseDir.TabIndex = 15;
-            this.labelChooseDir.Text = "Odaberite direktorij gdje će se pohranjivati datoteke";
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(53)))), ((int)(((byte)(147)))));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(56, 697);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(160, 17);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Made by: Kristian Naglić";
             // 
             // formMain
             // 
@@ -379,10 +393,11 @@
             this.panelHolderPanel.ResumeLayout(false);
             this.panelHolderPanel.PerformLayout();
             this.sidebar.ResumeLayout(false);
+            this.sidebar.PerformLayout();
             this.panelSubDecrypt.ResumeLayout(false);
             this.panelSubEncrypt.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.sidebarLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -393,7 +408,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnEncrypt;
         private System.Windows.Forms.Button btnGenerateKeys;
-        private System.Windows.Forms.PictureBox sidebarLogo;
         private System.Windows.Forms.Panel titleBar;
         private System.Windows.Forms.PictureBox exit;
         private System.Windows.Forms.Panel panelHolderPanel;
@@ -409,6 +423,8 @@
         private System.Windows.Forms.Button btnChooseDir;
         private System.Windows.Forms.Label labelChooseDir;
         private System.Windows.Forms.FolderBrowserDialog fbdMainDir;
+        private System.Windows.Forms.PictureBox pictureLogo;
+        private System.Windows.Forms.Label label1;
     }
 }
 
