@@ -106,6 +106,7 @@ namespace CryptiS
         private void btnEncryptAsymmetric_Click(object sender, EventArgs e)
         {
             hideSubmenus();
+            openForm(new formEncryptAsymmetric());
         }
 
         private void btnDecryptSymmetric_Click(object sender, EventArgs e)

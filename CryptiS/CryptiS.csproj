@@ -55,6 +55,12 @@
     <Compile Include="formDecryptSymmetric.Designer.cs">
       <DependentUpon>formDecryptSymmetric.cs</DependentUpon>
     </Compile>
+    <Compile Include="formEncryptAsymmetric.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formEncryptAsymmetric.Designer.cs">
+      <DependentUpon>formEncryptAsymmetric.cs</DependentUpon>
+    </Compile>
     <Compile Include="formEncryptSymmetric.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +93,9 @@
     <Compile Include="WorkingDir.cs" />
     <EmbeddedResource Include="formDecryptSymmetric.resx">
       <DependentUpon>formDecryptSymmetric.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formEncryptAsymmetric.resx">
+      <DependentUpon>formEncryptAsymmetric.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formEncryptSymmetric.resx">
       <DependentUpon>formEncryptSymmetric.cs</DependentUpon>
