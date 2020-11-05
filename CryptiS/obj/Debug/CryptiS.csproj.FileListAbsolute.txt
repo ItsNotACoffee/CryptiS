@@ -1,0 +1,14 @@
+C:\Users\Kristian\source\repos\CryptiS\CryptiS\bin\Debug\CryptiS.exe.config
+C:\Users\Kristian\source\repos\CryptiS\CryptiS\bin\Debug\CryptiS.exe
+C:\Users\Kristian\source\repos\CryptiS\CryptiS\bin\Debug\CryptiS.pdb
+C:\Users\Kristian\source\repos\CryptiS\CryptiS\obj\Debug\CryptiS.csprojAssemblyReference.cache
+C:\Users\Kristian\source\repos\CryptiS\CryptiS\obj\Debug\CryptiS.formDecryptSymmetric.resources
+C:\Users\Kristian\source\repos\CryptiS\CryptiS\obj\Debug\CryptiS.formEncryptSymmetric.resources
+C:\Users\Kristian\source\repos\CryptiS\CryptiS\obj\Debug\CryptiS.formGenerateHash.resources
+C:\Users\Kristian\source\repos\CryptiS\CryptiS\obj\Debug\CryptiS.formMain.resources
+C:\Users\Kristian\source\repos\CryptiS\CryptiS\obj\Debug\CryptiS.formGenerateKeys.resources
+C:\Users\Kristian\source\repos\CryptiS\CryptiS\obj\Debug\CryptiS.Properties.Resources.resources
+C:\Users\Kristian\source\repos\CryptiS\CryptiS\obj\Debug\CryptiS.csproj.GenerateResource.cache
+C:\Users\Kristian\source\repos\CryptiS\CryptiS\obj\Debug\CryptiS.csproj.CoreCompileInputs.cache
+C:\Users\Kristian\source\repos\CryptiS\CryptiS\obj\Debug\CryptiS.exe
+C:\Users\Kristian\source\repos\CryptiS\CryptiS\obj\Debug\CryptiS.pdb
