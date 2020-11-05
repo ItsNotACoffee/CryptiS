@@ -1,0 +1,14 @@
+C:\Users\Kristian\source\repos\DigitalniPotpis\DigitalniPotpis\bin\Debug\DigitalniPotpis.exe.config
+C:\Users\Kristian\source\repos\DigitalniPotpis\DigitalniPotpis\bin\Debug\DigitalniPotpis.exe
+C:\Users\Kristian\source\repos\DigitalniPotpis\DigitalniPotpis\bin\Debug\DigitalniPotpis.pdb
+C:\Users\Kristian\source\repos\DigitalniPotpis\DigitalniPotpis\obj\Debug\DigitalniPotpis.formMain.resources
+C:\Users\Kristian\source\repos\DigitalniPotpis\DigitalniPotpis\obj\Debug\DigitalniPotpis.formGenerateKeys.resources
+C:\Users\Kristian\source\repos\DigitalniPotpis\DigitalniPotpis\obj\Debug\DigitalniPotpis.Properties.Resources.resources
+C:\Users\Kristian\source\repos\DigitalniPotpis\DigitalniPotpis\obj\Debug\DigitalniPotpis.csproj.GenerateResource.cache
+C:\Users\Kristian\source\repos\DigitalniPotpis\DigitalniPotpis\obj\Debug\DigitalniPotpis.csproj.CoreCompileInputs.cache
+C:\Users\Kristian\source\repos\DigitalniPotpis\DigitalniPotpis\obj\Debug\DigitalniPotpis.exe
+C:\Users\Kristian\source\repos\DigitalniPotpis\DigitalniPotpis\obj\Debug\DigitalniPotpis.pdb
+C:\Users\Kristian\source\repos\DigitalniPotpis\DigitalniPotpis\obj\Debug\DigitalniPotpis.csprojAssemblyReference.cache
+C:\Users\Kristian\source\repos\DigitalniPotpis\DigitalniPotpis\obj\Debug\DigitalniPotpis.formDecryptSymmetric.resources
+C:\Users\Kristian\source\repos\DigitalniPotpis\DigitalniPotpis\obj\Debug\DigitalniPotpis.formEncryptSymmetric.resources
+C:\Users\Kristian\source\repos\DigitalniPotpis\DigitalniPotpis\obj\Debug\DigitalniPotpis.formGenerateHash.resources
