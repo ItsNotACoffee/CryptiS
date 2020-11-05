@@ -1,4 +1,4 @@
-![CryptiS Logo](/res/cryptis.png)
+![CryptiS Logo](/res/cryptis_alt.png)
 
 # CryptiS
 
