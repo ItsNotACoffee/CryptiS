@@ -9,22 +9,64 @@ public class Cryptography
 {
     public class Hash
     {
-        public static string calculate(string rawData)
+        public static byte[] Calculate(string rawData)
         {
             using (var cryptoProvider = new SHA256CryptoServiceProvider())
             {
                 byte[] buffer = Encoding.UTF8.GetBytes(rawData);
                 byte[] hash = cryptoProvider.ComputeHash(buffer);
-                var sb = new StringBuilder(hash.Length * 2);
 
-                foreach (byte b in hash)
+                return hash;
+            }
+        }
+
+        public static string ConvertHashToString(byte[] hash)
+        {
+            var sb = new StringBuilder(hash.Length * 2);
+
+            foreach (byte b in hash)
+            {
+                //"X2" if uppercase
+                sb.Append(b.ToString("x2"));
+            }
+            string readableHash = sb.ToString();
+
+            return readableHash;
+        }
+    }
+
+    public class DigitalSignature
+    {
+        private static int keySize = 4096;
+        public static byte[] Sign(string data, string privateKey)
+        {
+            byte[] hash = Hash.Calculate(data);
+            using (RSACryptoServiceProvider rsa = new RSACryptoServiceProvider(keySize))
+            {
+                string privateKeyReadable = Encoding.UTF8.GetString(Convert.FromBase64String(privateKey));
+                rsa.FromXmlString(privateKeyReadable);
+                RSAPKCS1SignatureFormatter rsaFormatter = new RSAPKCS1SignatureFormatter(rsa);
+                rsaFormatter.SetHashAlgorithm("SHA256");
+                return rsaFormatter.CreateSignature(hash);
+            }
+        }
+
+        public static Boolean Verify(string data, string signature, string publicKey)
+        {
+            byte[] hash = Hash.Calculate(data);
+            using (RSACryptoServiceProvider rsa = new RSACryptoServiceProvider(keySize))
+            {
+                string publicKeyReadable = Encoding.UTF8.GetString(Convert.FromBase64String(publicKey));
+                rsa.FromXmlString(publicKeyReadable);
+                RSAPKCS1SignatureDeformatter rsaDeformatter = new RSAPKCS1SignatureDeformatter(rsa);
+                rsaDeformatter.SetHashAlgorithm("SHA256");
+                if (rsaDeformatter.VerifySignature(hash, Convert.FromBase64String(signature)))
                 {
-                    //"X2" if uppercase
-                    sb.Append(b.ToString("x2"));
+                    return true;
+                } else
+                {
+                    return false;
                 }
-                string readableHash = sb.ToString();
-
-                return readableHash;
             }
         }
     }

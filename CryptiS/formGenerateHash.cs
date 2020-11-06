@@ -24,7 +24,7 @@ namespace CryptiS
             if (fileName != null)
             {
                 string rawData = File.ReadAllText(fileName);
-                string readableHash = Cryptography.Hash.calculate(rawData);
+                string readableHash = Cryptography.Hash.ConvertHashToString(Cryptography.Hash.Calculate(rawData));
                 textHash.Text = readableHash;
                 WorkingDir.save(readableHash, "hash.txt");
             }

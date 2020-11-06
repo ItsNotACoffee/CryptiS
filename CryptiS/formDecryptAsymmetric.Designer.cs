@@ -184,7 +184,7 @@
             // 
             // ofdKey
             // 
-            this.ofdKey.Title = "Izaberite simetrični ključ";
+            this.ofdKey.Title = "Izaberite privatni ključ";
             // 
             // formDecryptAsymmetric
             // 

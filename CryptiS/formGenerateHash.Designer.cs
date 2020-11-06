@@ -121,7 +121,7 @@
             // 
             // ofdFile
             // 
-            this.ofdFile.Title = "Izaberite simetrični ključ";
+            this.ofdFile.Title = "Izaberite datoteku";
             // 
             // formGenerateHash
             // 

@@ -130,6 +130,7 @@ namespace CryptiS
         private void btnDigitalSignature_Click(object sender, EventArgs e)
         {
             hideSubmenus();
+            openForm(new formDigitalSignature());
         }
         #endregion
 
