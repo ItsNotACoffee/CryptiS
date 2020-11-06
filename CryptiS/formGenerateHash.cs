@@ -23,22 +23,10 @@ namespace CryptiS
         {
             if (fileName != null)
             {
-                using (var cryptoProvider = new SHA1CryptoServiceProvider())
-                {
-                    byte[] buffer = File.ReadAllBytes(fileName);
-                    byte[] hash = cryptoProvider.ComputeHash(buffer);
-                    var sb = new StringBuilder(hash.Length * 2);
-
-                    foreach (byte b in hash)
-                    {
-                        //"X2" if uppercase
-                        sb.Append(b.ToString("x2"));
-                    }
-                    string readableHash = sb.ToString();
-
-                    textHash.Text = readableHash;
-                    WorkingDir.save(readableHash, "hash.txt");
-                }
+                string rawData = File.ReadAllText(fileName);
+                string readableHash = Cryptography.Hash.calculate(rawData);
+                textHash.Text = readableHash;
+                WorkingDir.save(readableHash, "hash.txt");
             }
             else
             {

@@ -7,6 +7,28 @@ using System.Text;
 
 public class Cryptography
 {
+    public class Hash
+    {
+        public static string calculate(string rawData)
+        {
+            using (var cryptoProvider = new SHA256CryptoServiceProvider())
+            {
+                byte[] buffer = Encoding.UTF8.GetBytes(rawData);
+                byte[] hash = cryptoProvider.ComputeHash(buffer);
+                var sb = new StringBuilder(hash.Length * 2);
+
+                foreach (byte b in hash)
+                {
+                    //"X2" if uppercase
+                    sb.Append(b.ToString("x2"));
+                }
+                string readableHash = sb.ToString();
+
+                return readableHash;
+            }
+        }
+    }
+
     public class Asymmetric
     {
         private static int keySize = 4096;
