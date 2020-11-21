@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Cryptography;
 
 namespace CryptiS
 {
@@ -46,6 +47,8 @@ namespace CryptiS
             richTextDecryptedFile.Text = "";
             if (encryptedFile != null && privateKey != null)
             {
+                try
+                {
                 byte[] encFile = Convert.FromBase64String(File.ReadAllText(encryptedFile));
                 string pKey = File.ReadAllText(privateKey);
 
@@ -53,6 +56,24 @@ namespace CryptiS
                 WorkingDir.save(decodedText, "dekriptirani_tekst_asimetricni.txt");
                 richTextDecryptedFile.Text = decodedText;
                 textDecryptedPath.Text = WorkingDir.directory + "\\" + "dekriptirani_tekst_asimetricni.txt";
+                }
+                catch (Exception ex)
+                {
+                    if (ex is CryptographicException || ex is System.FormatException)
+                    {
+                        string message = "Ključ ili datoteka nisu valjani!";
+                        string caption = "Decrypt Error";
+                        MessageBoxButtons buttons = MessageBoxButtons.OK;
+                        MessageBox.Show(message, caption, buttons);
+                    }
+                    else
+                    {
+                        string message = "Dogodila se greška, pokušajte ponovo!";
+                        string caption = "Unknown Error";
+                        MessageBoxButtons buttons = MessageBoxButtons.OK;
+                        MessageBox.Show(message, caption, buttons);
+                    }
+                }
             }
             else
             {

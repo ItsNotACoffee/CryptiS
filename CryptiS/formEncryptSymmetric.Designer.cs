@@ -134,10 +134,12 @@
             // 
             // ofdFile
             // 
+            this.ofdFile.Filter = "txt files (*.txt)|*.txt";
             this.ofdFile.Title = "Izaberite datoteku koju želite kriptirati";
             // 
             // ofdKey
             // 
+            this.ofdKey.Filter = "txt files (*.txt)|*.txt";
             this.ofdKey.Title = "Izaberite simetrični ključ";
             // 
             // labelTitle

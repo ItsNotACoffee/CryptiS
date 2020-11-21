@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -78,13 +79,32 @@ namespace CryptiS
             {
                 string fileContent = File.ReadAllText(originalFile);
                 string pKey = File.ReadAllText(privateKey);
-                string digitalSignature = Convert.ToBase64String(Cryptography.DigitalSignature.Sign(fileContent, pKey));
-                WorkingDir.save(digitalSignature, "digitalni_potpis.txt");
-                labelSignatureStatus.Text = "Datoteka uspješno potpisana!";
-                labelSignatureStatus.ForeColor = Color.Green;
-                textFilePath.Text = WorkingDir.directory + "\\" + "digitalni_potpis.txt";
-                toggleComponents(true);
-
+                try
+                {
+                    string digitalSignature = Convert.ToBase64String(Cryptography.DigitalSignature.Sign(fileContent, pKey));
+                    WorkingDir.save(digitalSignature, "digitalni_potpis.txt");
+                    labelSignatureStatus.Text = "Datoteka uspješno potpisana!";
+                    labelSignatureStatus.ForeColor = Color.Green;
+                    textFilePath.Text = WorkingDir.directory + "\\" + "digitalni_potpis.txt";
+                    toggleComponents(true);
+                }
+                catch (Exception ex)
+                {
+                    if (ex is CryptographicException || ex is System.FormatException)
+                    {
+                        string message = "Ključ ili datoteka nisu valjani!";
+                        string caption = "Signature Error";
+                        MessageBoxButtons buttons = MessageBoxButtons.OK;
+                        MessageBox.Show(message, caption, buttons);
+                    }
+                    else
+                    {
+                        string message = "Dogodila se greška, pokušajte ponovo!";
+                        string caption = "Unknown Error";
+                        MessageBoxButtons buttons = MessageBoxButtons.OK;
+                        MessageBox.Show(message, caption, buttons);
+                    }
+                }
             } else
             {
                 string message = "Niste učitali sve potrebne podatke za potpisivanje!";
@@ -118,12 +138,22 @@ namespace CryptiS
                         labelSignatureStatus.Visible = true;
                     }
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    string message = "Učitane datoteke nisu u valjanom formatu!";
-                    string caption = "Input Error";
-                    MessageBoxButtons buttons = MessageBoxButtons.OK;
-                    MessageBox.Show(message, caption, buttons);
+                    if (ex is CryptographicException || ex is System.FormatException)
+                    {
+                        string message = "Učitane datoteke nisu valjane!";
+                        string caption = "Signature Error";
+                        MessageBoxButtons buttons = MessageBoxButtons.OK;
+                        MessageBox.Show(message, caption, buttons);
+                    }
+                    else
+                    {
+                        string message = "Dogodila se greška, pokušajte ponovo!";
+                        string caption = "Unknown Error";
+                        MessageBoxButtons buttons = MessageBoxButtons.OK;
+                        MessageBox.Show(message, caption, buttons);
+                    }
                 }
             }
             else

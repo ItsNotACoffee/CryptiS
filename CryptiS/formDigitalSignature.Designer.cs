@@ -281,21 +281,25 @@
             // ofdFile
             // 
             this.ofdFile.FileName = "ofdFile";
+            this.ofdFile.Filter = "txt files (*.txt)|*.txt";
             this.ofdFile.Title = "Izaberite originalnu datoteku";
             // 
             // ofdSignature
             // 
             this.ofdSignature.FileName = "ofdSignature";
+            this.ofdSignature.Filter = "txt files (*.txt)|*.txt";
             this.ofdSignature.Title = "Izaberite digitalni potpis";
             // 
             // ofdPrivateKey
             // 
             this.ofdPrivateKey.FileName = "ofdPrivateKey";
+            this.ofdPrivateKey.Filter = "txt files (*.txt)|*.txt";
             this.ofdPrivateKey.Title = "Izaberite privatni ključ";
             // 
             // ofdPublicKey
             // 
             this.ofdPublicKey.FileName = "ofdPublicKey";
+            this.ofdPublicKey.Filter = "txt files (*.txt)|*.txt";
             this.ofdPublicKey.Title = "Izaberite javni ključ";
             // 
             // formDigitalSignature

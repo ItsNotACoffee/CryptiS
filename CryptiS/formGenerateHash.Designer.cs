@@ -121,6 +121,7 @@
             // 
             // ofdFile
             // 
+            this.ofdFile.Filter = "txt files (*.txt)|*.txt";
             this.ofdFile.Title = "Izaberite datoteku";
             // 
             // formGenerateHash
